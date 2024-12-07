@@ -1,0 +1,11 @@
+get_filename_component(TARGET_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
+
+file(
+    GLOB_RECURSE CMAKE_SOURCES CONFIGURE_DEPENDS "*.cmake"
+)
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${CMAKE_SOURCES})
+
+add_custom_target(${TARGET_NAME} SOURCES ${CMAKE_SOURCES})
+
+set_target_properties(${TARGET_NAME} PROPERTIES FOLDER "Build")

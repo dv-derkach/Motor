@@ -1,0 +1,6 @@
+# Ignore build temp files
+[Bb]in
+[Ww]orkspace
+
+# Ignore Visual Studio files
+.vs

@@ -1,0 +1,130 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "Win",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/Workspace/${presetName}",
+            "toolchainFile": "Code/Build/CMake/Toolchains/Windows.cmake"
+        },
+        {
+            "name": "WinDebug",
+            "displayName": "Win Debug",
+            "inherits": "Win",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "WinDevelopment",
+            "displayName": "Win Development",
+            "inherits": "Win",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Development"
+            }
+        },
+        {
+            "name": "WinShipping",
+            "displayName": "Win Shipping",
+            "inherits": "Win",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Shipping"
+            }
+        },
+        {
+            "name": "Linux",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/Workspace/${presetName}",
+            "toolchainFile": "Code/Build/CMake/Toolchains/Linux.cmake"
+        },
+        {
+            "name": "LinuxDebug",
+            "displayName": "Linux Debug",
+            "inherits": "Linux",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "LinuxDevelopment",
+            "displayName": "Linux Development",
+            "inherits": "Linux",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Development"
+            }
+        },
+        {
+            "name": "LinuxShipping",
+            "displayName": "Linux Shipping",
+            "inherits": "Linux",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Shipping"
+            }
+        },
+        {
+            "name": "Android",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/Workspace/${presetName}",
+            "toolchainFile": "Code/Build/CMake/Toolchains/Android.cmake"
+        },
+        {
+            "name": "AndroidArm64Debug",
+            "displayName": "Android Arm64 Debug",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ANDROID_ABI": "arm64-v8a"
+            }
+        },
+        {
+            "name": "AndroidArm64Development",
+            "displayName": "Android Arm64 Development",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Development",
+                "ANDROID_ABI": "arm64-v8a"
+            }
+        },
+        {
+            "name": "AndroidArm64Shipping",
+            "displayName": "Android Arm64 Shipping",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Shipping",
+                "ANDROID_ABI": "arm64-v8a"
+            }
+        },
+        {
+            "name": "AndroidX64Debug",
+            "displayName": "Android X64 Debug",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ANDROID_ABI": "x86_64"
+            }
+        },
+        {
+            "name": "AndroidX64Development",
+            "displayName": "Android X64 Development",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Development",
+                "ANDROID_ABI": "x86_64"
+            }
+        },
+        {
+            "name": "AndroidX64Shipping",
+            "displayName": "Android X64 Shipping",
+            "inherits": "Android",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Shipping",
+                "ANDROID_ABI": "x86_64"
+            }
+        }
+    ]
+}
