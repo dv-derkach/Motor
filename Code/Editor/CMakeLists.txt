@@ -1,3 +1,3 @@
 get_filename_component(TARGET_GROUP ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
 
-add_subdirectory(Main)
+add_subdirectory(Editor)
