@@ -9,3 +9,7 @@ target_include_directories(${TARGET_NAME} PUBLIC "${CMAKE_SOURCE_DIR}/Code/${TAR
 set_target_properties(${TARGET_NAME} PROPERTIES FOLDER ${TARGET_GROUP})
 
 target_precompile_headers(${TARGET_NAME} PRIVATE "${TARGET_NAME}PCH.h")
+
+target_link_libraries(${TARGET_NAME} volk)
+
+add_dependencies(${TARGET_NAME} volk)
