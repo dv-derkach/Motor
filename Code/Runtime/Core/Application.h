@@ -1,3 +1,0 @@
-namespace Motor {
-    class Application {};
-}

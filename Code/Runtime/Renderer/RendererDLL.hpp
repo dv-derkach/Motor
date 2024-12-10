@@ -1,0 +1,17 @@
+#pragma once
+
+#if M_ENABLED(M_PLATFORM_WINDOWS)
+    #define VK_USE_PLATFORM_WIN32_KHR
+#elif M_ENABLED(M_PLATFORM_LINUX)
+    #define VK_USE_PLATFORM_XCB_KHR
+#elif M_ENABLED(EZ_PLATFORM_ANDROID)
+    #define VK_USE_PLATFORM_ANDROID_KHR
+#endif
+
+#if M_ENABLED(M_COMPILE_ENGINE_AS_DLL)
+    #if BUILDING_RENDERER_LIB
+    #else
+    #endif
+#else
+  #define M_RENDERER_EXPORT
+#endif
