@@ -1,4 +1,0 @@
-namespace Motor {
-    class Renderer {
-    };
-}

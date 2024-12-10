@@ -1,0 +1,17 @@
+get_filename_component(TARGET_GROUP ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
+
+if(NOT TARGET Vulkan)
+    find_package(Vulkan REQUIRED)
+    if(NOT Vulkan_FOUND)
+        message(FATAL_ERROR "Vulkan SDK not found")
+    elseif(NOT Vulkan_glslangValidator_FOUND)
+        message(FATAL_ERROR "Vulkan SDK shader compiler not found")
+    elseif(NOT Vulkan_INCLUDE_DIR)
+        message(FATAL_ERROR "Vulkan SDK includes not found")
+    endif()
+endif()
+
+if(NOT TARGET volk)
+    add_subdirectory(volk)
+    set_target_properties(volk PROPERTIES FOLDER "${TARGET_GROUP}")
+endif()
