@@ -1,0 +1,15 @@
+function(motor_add_subdirectories)
+    file(GLOB LIST_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*")
+
+    foreach(FOUNDED_FILE ${LIST_FILES})
+        if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${FOUNDED_FILE}")
+            list(APPEND LIST_DIRECTORIES ${FOUNDED_FILE})
+        endif()
+    endforeach()
+
+    foreach(FOUNDED_DIRECTORY ${LIST_DIRECTORIES})
+        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${FOUNDED_DIRECTORY}/CMakeLists.txt")
+            add_subdirectory(${FOUNDED_DIRECTORY})
+        endif()
+    endforeach()
+endfunction()

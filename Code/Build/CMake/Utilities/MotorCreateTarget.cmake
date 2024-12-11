@@ -1,0 +1,17 @@
+function(motor_create_target)
+    get_filename_component(CURRENT_TARGET_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
+
+    file(GLOB_RECURSE CURRENT_TARGET_SOURCES CONFIGURE_DEPENDS "*.cpp" "*.hpp")
+
+    source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${CURRENT_TARGET_SOURCES})
+
+    add_library(${CURRENT_TARGET_NAME} ${CURRENT_TARGET_SOURCES})
+
+    target_include_directories(${CURRENT_TARGET_NAME} PUBLIC "${CMAKE_SOURCE_DIR}/Code")
+
+    if(MOTOR_CURRENT_TARGET_GROUP)
+        set_target_properties(${CURRENT_TARGET_NAME} PROPERTIES FOLDER ${MOTOR_CURRENT_TARGET_GROUP})
+    endif()
+
+    set(MOTOR_CURRENT_TARGET_NAME ${CURRENT_TARGET_NAME} PARENT_SCOPE)
+endfunction()

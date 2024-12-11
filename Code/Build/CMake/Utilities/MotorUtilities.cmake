@@ -1,0 +1,3 @@
+include(MotorAddSubdirectories)
+include(MotorCreateTarget)
+include(MotorCreateTargetGroup)

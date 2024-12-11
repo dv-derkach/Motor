@@ -1,3 +1,4 @@
-get_filename_component(TARGET_GROUP ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
+motor_create_target_group()
 
-add_subdirectory(Editor)
+motor_add_subdirectories()
+    

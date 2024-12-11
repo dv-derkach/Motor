@@ -1,4 +1,4 @@
-get_filename_component(TARGET_GROUP ${CMAKE_CURRENT_SOURCE_DIR} NAME_WE)
+motor_create_target_group()
 
 if(NOT TARGET Vulkan)
     find_package(Vulkan REQUIRED)
@@ -13,5 +13,5 @@ endif()
 
 if(NOT TARGET volk)
     add_subdirectory(volk)
-    set_target_properties(volk PROPERTIES FOLDER "${TARGET_GROUP}")
+    set_target_properties(volk PROPERTIES FOLDER "${MOTOR_CURRENT_TARGET_GROUP}")
 endif()
